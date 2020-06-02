@@ -1,0 +1,14 @@
+Codigo JDBC:
+
+Usuario: votante
+Contraseña: 1231!#ASDF!a
+Permisos: EXECUTE, UPDATE
+
+Script usado:
+
+--Esto en master
+CREATE LOGIN votante with password='1231!#ASDF!a';
+--Esto en la base de datos correspondiente
+CREATE USER votante FROM LOGIN votante
+GRANT EXECUTE, UPDATE,
+	SELECT TO votante
