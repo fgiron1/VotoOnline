@@ -69,7 +69,7 @@ CREATE TABLE Politico (
 
 )
 GO
-
+--Votantes del censo
 INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, prefijo, telefono, provinciaNacimiento, provinciaResidencia) VALUES (N'Jesús', N'Zhou González', CAST(N'08-08-1946' AS date), N'H', N'26969033S', N'+39',  N'03681253021', N'Álava', N'Valencia')
 INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, prefijo, telefono, provinciaNacimiento, provinciaResidencia) VALUES (N'Luis', N'Carmona Guirado', CAST(N'22-11-1955' AS date), N'H', N'05814522F', N'+34', N'656823205', N'Ciudad Real', N'Salamanca')
 INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, prefijo, telefono, provinciaNacimiento, provinciaResidencia) VALUES (N'Ana', N'Naranjo Pelayo', CAST(N'24-03-1969' AS date), N'M', N'42728708K', N'+34', N'678430803', N'Las Palmas', N'Murcia')
@@ -89,9 +89,35 @@ INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, pref
 INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, prefijo, telefono, provinciaNacimiento, provinciaResidencia) VALUES (N'Francisco Javier', N'Medina Quintana', CAST(N'09-12-1982' AS date), N'H', N'23646678X', N'+45', N'21475692', N'Cantabria', N'Burgos')
 INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, prefijo, telefono, provinciaNacimiento, provinciaResidencia) VALUES (N'Leopoldo', N'Acal García', CAST(N'10-06-2000' AS date), N'H', N'46450536N', N'+34', N'755318016', N'Vizcaya', N'La Coruña')
 INSERT INTO [dbo].[Votante] (nombre, apellidos, fechaNacimiento, sexo, DNI, prefijo, telefono, provinciaNacimiento, provinciaResidencia) VALUES (N'Ignacio', N'Rubio Garrido', CAST(N'21-03-1998' AS date), N'H', N'42813192A', N'+45', N'29180919', N'Islas Baleares', N'Álava')
+--Partidos
+INSERT INTO [dbo].[Partido] (nombre, lema, votosTotales, escanos) VALUES (N'ERC', N'Hablando se entiende la gente', 0, 0)
+INSERT INTO [dbo].[Partido] (nombre, lema, votosTotales, escanos) VALUES (N'PP', N'Por todo lo que nos une', 0, 0)
+INSERT INTO [dbo].[Partido] (nombre, lema, votosTotales, escanos) VALUES (N'PSOE', N'Ahora sí', 0, 0)
+INSERT INTO [dbo].[Partido] (nombre, lema, votosTotales, escanos) VALUES (N'Vox', N'España siempre', 0, 0)
+INSERT INTO [dbo].[Partido] (nombre, lema, votosTotales, escanos) VALUES (N'Unidas Podemos', N'Un Gobierno contigo', 0, 0)
+INSERT INTO [dbo].[Partido] (nombre, lema, votosTotales, escanos) VALUES (N'Ciudadanos', N'España en Marcha', 0, 0)
+--Políticos
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Eduardo', N'Arasti', 2, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'José Luis', N'Barreiro', 2, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Jesús', N'Barros', 2, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Josep', N'Tarradellas', 1, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Joan', N'Sauret', 1, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Lluís', N'Companys', 1, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Clara', N'Aguilera', 3, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Erasmo', N'Armas Dárias', 3, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Francina', N'Armengol', 3, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Rocío', N'Monasterio', 4, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Santiago', N'Abascal Conde', 4, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Francisco José', N'Contreras', 4, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Pablo', N'Iglesia Turrión', 5, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Iñigo', N'Errejon', 5, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Pablo', N'Echenique', 5, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Inés', N'Arrimadas', 6, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Marina', N'Bravo', 6, 0)
+INSERT INTO [dbo].[Politico] (nombre, apellidos, partido, consigueEscano) VALUES (N'Carlos', N'Cuadrado', 6, 0)
 
+--Este procedimiento se ejecuta tras finalizar las elecciones y asigna los escaños en función de los votos
 
---Este procedimiento se ejecuta tras finalizar las elecciones
 GO
 CREATE OR ALTER PROCEDURE AsignarEscanos AS
 BEGIN
